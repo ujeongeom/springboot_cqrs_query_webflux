@@ -39,7 +39,7 @@ FROM ghcr.io/shclub/jre17-runtime:v1.0.0
 
 COPY --from=MAVEN_BUILD /build/target/*.jar app.jar
 
-COPY elastic-apm-agent-1.43.0.jar /
+# COPY elastic-apm-agent-1.43.0.jar /
 
 ENV TZ Asia/Seoul
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone

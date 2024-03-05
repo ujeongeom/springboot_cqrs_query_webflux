@@ -14,23 +14,10 @@ spring:
     init:
       platform: h2
       mode: embedded
-  datasource:
-    driverClassName: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
-    url: jdbc:log4jdbc:h2:mem:testdb;IGNORECASE=TRUE #jdbc:log4jdbc:tibero:thin:@localhost:8640:POCICISORDDB
-    username: sa
-    password: ENC(hk5/B+52K9XaD+BqzpFaHQ==)
-    # h2 DB
-    generate-unique-name: false
-    hikari:
-      pool-name: hikari-cp
-      maximum-pool-size: 30
-      minimum-idle: 2
-      data-source-properties:
-        cachePrepStmts: true
-        prepStmtCacheSize: 250
-        prepStmtCacheSqlLimit: 2048
-        useServerPrepStmts: true
-        
+#r2dbc
+  r2dbc:
+    url: r2dbc:h2:mem:///./testdb
+
 # spring boot - actuator expose
 management:
   endpoints:

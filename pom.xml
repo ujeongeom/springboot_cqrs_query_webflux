@@ -19,7 +19,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
+			<artifactId>spring-boot-starter-webflux</artifactId>
 			<exclusions>
 				<exclusion>
 					<groupId>org.springframework.boot</groupId>
@@ -38,6 +38,7 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-cache</artifactId>
 		</dependency>
+
 		<!-- caffeine cache -->
 		<dependency>
 			<groupId>com.github.ben-manes.caffeine</groupId>
@@ -64,7 +65,27 @@
 			<artifactId>h2</artifactId>
 			<scope>runtime</scope>
 		</dependency>
-	        <!-- maridab -->
+
+		<!-- h2 r2dbc -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-r2dbc</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>io.r2dbc</groupId>
+			<artifactId>r2dbc-h2</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<!-- M1 맥북에 추가 -->
+			<groupId>io.netty</groupId>
+			<artifactId>netty-resolver-dns-native-macos</artifactId>
+			<version>4.1.73.Final</version>
+			<classifier>osx-aarch_64</classifier>
+		</dependency>
+
+		<!-- maridab -->
 		  <!--dependency>
                                 <groupId>org.mariadb.jdbc</groupId>
                                 <artifactId>mariadb-java-client</artifactId>
@@ -100,11 +121,11 @@
 			<scope>test</scope>
 		</dependency>
 
-		<!--dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
+		<dependency>
+			<groupId>io.projectreactor</groupId>
+			<artifactId>reactor-test</artifactId>
 			<scope>test</scope>
-		</dependency-->
+		</dependency>
 
 		<!-- spring log4j2 -->
 		<dependency>
@@ -113,10 +134,10 @@
 		</dependency>
 
 		<!-- Spring Security -->
-		<dependency>
+		<!--dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
-		</dependency>
+		</dependency-->
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -128,12 +149,14 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-aop</artifactId>
 		</dependency>
-		<!-- Jwt Token -->
-		<!--dependency>
-			<groupId>io.jsonwebtoken</groupId>
-			<artifactId>jjwt</artifactId>
-			<version>0.9.1</version>
-		</dependency-->
+
+		<!-- Redis -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-redis</artifactId>
+			<version>3.2.3</version>
+		</dependency>
+
 		<dependency>
 			<groupId>io.jsonwebtoken</groupId>
 			<artifactId>jjwt-api</artifactId>
@@ -158,18 +181,6 @@
 			<version>2.3.1</version>
 		</dependency>
 
-		<!-- Naver lucy xss filter -->
-		<dependency>
-			<groupId>com.navercorp.lucy</groupId>
-			<artifactId>lucy-xss</artifactId>
-			<version>1.6.3</version>
-		</dependency>
-		<dependency>
-			<groupId>com.navercorp.lucy</groupId>
-			<artifactId>lucy-xss-servlet</artifactId>
-			<version>2.0.0</version>
-		</dependency>
-
 		<!-- Jasypt -->
 		<dependency>
 			<groupId>com.github.ulisesbocchio</groupId>
@@ -184,12 +195,6 @@
 		    <artifactId>micrometer-registry-prometheus</artifactId>
 		</dependency>
 
-	         <!-- https://mvnrepository.com/artifact/co.elastic.apm/elastic-apm-agent -->
-		<dependency>
-		    <groupId>co.elastic.apm</groupId>
-		    <artifactId>elastic-apm-agent</artifactId>
-		    <version>1.43.0</version>
-		</dependency>	
 	</dependencies>
 
 	<build>

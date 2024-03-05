@@ -1,6 +1,5 @@
 create sequence hibernate_sequence;
 
-
 create table employee
 (
     id              long    not null,

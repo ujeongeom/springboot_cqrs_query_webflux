@@ -1,18 +1,18 @@
-# springboot_crud_security_aop
+# springboot_cqrs_query_webflux
 
 ***
 
 
-- JWT 변경 : 0.9.1 ->  0.12.3
-  - secret key 40 자리 이상으로
-- SpringBoot : 3.2.1
-  - aop 추가
-- TestCase 추가
+- JWT 삭제
+- SpringBoot Webflux : 3.2.1
+  - AOP 추가
+  - LogFilter 추가
+  - H2 R2DBC
+  - Router Function 추가
+  - Handler Function 추가
 
-local : SpringBoot + JWT + H2  
+local : SpringBoot +  QUERY + WEBFLUX + H2 
 
-<br/>
-
-prd : SpringBoot + JWT + MariaDB
+prd : SpringBoot +  QUERY + WEBFLUX + MariaDB
 
 ***

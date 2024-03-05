@@ -86,6 +86,3 @@ public class LogAspect {
         }
     }
 }
-// 참고 1 : https://velog.io/@wnguswn7/Project-Spring-AOP%EB%A1%9C-%EB%A1%9C%EA%B7%B8-%EC%95%8C%EB%A6%BC-%EA%B8%B0%EB%8A%A5-%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0
-// 참고 2 : https://ittrue.tistory.com/233
-// 참고 3 : https://hstory0208.tistory.com/entry/Spring-%ED%8A%B9%EC%A0%95%EC%83%81%ED%99%A9%EC%97%90-%EC%8A%A4%ED%94%84%EB%A7%81-AOP-%EC%A0%81%EC%9A%A9%ED%95%98%EA%B8%B0

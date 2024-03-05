@@ -7,9 +7,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="springboot_crud_security_aop" />
+        <module name="springboot_crud_security_query" />
+        <module name="springboot_crud_security_query_webflux" />
         <module name="thirdproject" />
         <module name="springboot_crud_security" />
-        <module name="springboot_crud_security_aop" />
       </profile>
     </annotationProcessing>
   </component>
@@ -17,6 +19,8 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="springboot_crud_security" options="-parameters" />
       <module name="springboot_crud_security_aop" options="-parameters" />
+      <module name="springboot_crud_security_query" options="-parameters" />
+      <module name="springboot_crud_security_query_webflux" options="-parameters" />
       <module name="thirdproject" options="-parameters" />
     </option>
   </component>
