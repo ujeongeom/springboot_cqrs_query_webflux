@@ -52,7 +52,7 @@ jasypt:
 
 jwt:
   secret-key: CloudNativeKtEduSecretKey20240228CloudNativeKtEduSecretKey20240228CloudNativeKtEduSecretKey20240228
-  token-expiration-seconds: 1800
+  token-expiration-seconds: 600000
 
 # app
 app-info:

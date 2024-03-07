@@ -146,14 +146,10 @@ public class FluxTest {
 }
 @Data
 @AllArgsConstructor
+@NoArgsConstructor //매개변수가 없는 기본 생성자를 자동으로 생성
 class Member {
     private String name;
     private int age;
-
-    public Member(String name, int age) {
-        this.name = name;
-        this.age = age;
-    }
 
     public String getName() {
         return name;
