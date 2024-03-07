@@ -1,4 +1,4 @@
-package com.kt.edu.thirdproject;
+package com.kt.edu.thirdproject.common;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
