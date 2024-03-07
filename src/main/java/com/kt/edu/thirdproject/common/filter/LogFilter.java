@@ -24,7 +24,7 @@ public class LogFilter implements WebFilter {
                     //exchange.getResponse().getHeaders().entrySet() => Set<Map.Entry<String, List<String>>>
                     exchange.getResponse().getHeaders().entrySet().forEach(e ->
                             log.info("Response Headers '{}' : '{}'",e.getKey(),e.getValue()));
-                    log.info("Served '{}' as {} in {} ms",
+                            log.info("Served '{}' as {} in {} ms",
                             path,
                             exchange.getResponse().getStatusCode(),
                             System.currentTimeMillis() - startTime);

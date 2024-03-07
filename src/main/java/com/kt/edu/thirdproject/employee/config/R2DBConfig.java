@@ -19,25 +19,25 @@ import java.util.Arrays;
 @EnableR2dbcAuditing
 @Slf4j
 public class R2DBConfig {
-    /*
+
     @Bean
     ConnectionFactoryInitializer initializer(ConnectionFactory connectionFactory) {
         ConnectionFactoryInitializer initializer = new ConnectionFactoryInitializer();
         initializer.setConnectionFactory(connectionFactory);
         initializer.setDatabasePopulator(new ResourceDatabasePopulator(new ClassPathResource("schema.sql")));
         return initializer;
-    }*/
+    }
 
-    /*@Bean
+    @Bean
 	public CommandLineRunner demo(EmployeeRepository repository) {
 
 		return (args) -> {
 			// save a few employees
-			repository.saveAll(Arrays.asList(new EmployeeEntity(1L,"1","1","1","1"),
-							new EmployeeEntity(2L,"2","2","1","1"),
-							new EmployeeEntity(3L,"3","3","1","1"),
-							new EmployeeEntity(4L,"4","4","1","1"),
-							new EmployeeEntity(5L,"5","5","1","1")))
+            repository.saveAll(Arrays.asList(new EmployeeEntity("1","1","1","1"),
+                            new EmployeeEntity("2","2","2","2"),
+                            new EmployeeEntity("3","3","3","3"),
+                            new EmployeeEntity("4","4","4","4"),
+                            new EmployeeEntity("5","5","5","5")))
 					.blockLast(Duration.ofSeconds(10));
 
 			// fetch all employees
@@ -58,5 +58,5 @@ public class R2DBConfig {
 			}).block(Duration.ofSeconds(10));
 
 		};
-	}*/
+	}
 }

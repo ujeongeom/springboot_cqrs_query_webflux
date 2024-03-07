@@ -18,20 +18,19 @@ import reactor.core.publisher.Mono;
 public class EmployeeHandler {
 
     private final EmployeeRepository employeeRepository;
-    private Mono<ServerResponse> response406 =
-            ServerResponse.status(HttpStatus.NOT_ACCEPTABLE).build();
+    private Mono<ServerResponse> response406 = ServerResponse.status(HttpStatus.NOT_ACCEPTABLE).build();
 
     public Mono<ServerResponse> getEmployees(ServerRequest request) {
         Flux<EmployeeEntity> customerFlux = employeeRepository.findAll();
         return ServerResponse.ok() //ServerResponse.BodyBuilder
-                .contentType(MediaType.APPLICATION_JSON) //ServerResponse.BodyBuilder
-                .body(customerFlux, EmployeeEntity.class); //Mono<ServerResponse>
+                .contentType(MediaType.APPLICATION_JSON) //ServerResponse.BodyBuilder / json현태로 반환
+                .body(customerFlux, EmployeeEntity.class); //Mono<ServerResponse> // json으로 던저주고, 내부적으로는 잭슨(?)
     }
 
     public Mono<ServerResponse> getEmployee(ServerRequest request) {
         Long id = Long.parseLong(request.pathVariable("id"));
         return employeeRepository.findById(id)
-                .flatMap(employee -> ServerResponse.ok()  //ServerResponse.BodyBuilder
+                .flatMap(employee -> ServerResponse.ok()  //ServerResponse.BodyBuilder / flatMap: 데이터를 평탄화 하는 것
                         .contentType(MediaType.APPLICATION_JSON)  //ServerResponse.BodyBuilder
                         .body(BodyInserters.fromValue(employee))
                 ).switchIfEmpty(getError(id));

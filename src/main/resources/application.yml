@@ -51,7 +51,8 @@ jasypt:
     bean: jasyptStringEncryptor
 
 jwt:
-  secret: CloudNativeKtEduSecretKey20240228CloudNativeKtEduSecretKey20240228CloudNativeKtEduSecretKey20240228
+  secret-key: CloudNativeKtEduSecretKey20240228CloudNativeKtEduSecretKey20240228CloudNativeKtEduSecretKey20240228
+  token-expiration-seconds: 1800
 
 # app
 app-info:

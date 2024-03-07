@@ -10,9 +10,9 @@ import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
 @Data
-@Builder
-@AllArgsConstructor
-@NoArgsConstructor
+//@Builder
+//@AllArgsConstructor
+//@NoArgsConstructor
 @ToString
 @Table("EMPLOYEE")
 @Schema(description = "employee Entity")
@@ -41,13 +41,13 @@ public class EmployeeEntity implements Persistable<Long> {
     private String empMail;
 
     @Transient
-    private boolean isNew = false;
+    private boolean isNew = true;
 
     @Override
     public boolean isNew() { return isNew; }
 
-    public EmployeeEntity(Long id,String empName, String empDeptName,String empTelNo, String empMail) {
-        this.id = id;
+    public EmployeeEntity(String empName, String empDeptName,String empTelNo, String empMail) {
+        //this.id = id;
         this.empName = empName;
         this.empDeptName = empDeptName;
         this.empTelNo = empTelNo;

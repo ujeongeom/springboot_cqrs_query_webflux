@@ -56,3 +56,8 @@ springdoc:
 logging:
   level:
     com.kt.edu: trace
+    org:
+      springframework:
+        r2dbc:
+          core:
+            DefaultDatabaseClient: debug
